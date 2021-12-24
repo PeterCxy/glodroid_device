@@ -33,7 +33,6 @@
         <version>2.5</version>
         <interface>
             <name>ICameraProvider</name>
-            <instance>external/0</instance>
             <instance>legacy/0</instance>
         </interface>
     </hal>
