@@ -44,17 +44,17 @@ $(PRODUCT_OUT)/flash-emmc.sh: $(PLATFORM_PATH)/tools/flash-all.sh
 	sed -i "s/__SUFFIX__/-emmc/g" $@
 
 $(PRODUCT_OUT)/deploy-sd.img: $(GENSDIMG) $(DEPLOY_BOOTLOADER) $(PRODUCT_OUT)/boot.img
-	$(NATIVE_PATH) $< -C=$(PRODUCT_OUT) -T=DEPLOY-SD -P=$(PRODUCT_BOARD_PLATFORM) $(notdir $@)
+	$< -C=$(PRODUCT_OUT) -T=DEPLOY-SD -P=$(PRODUCT_BOARD_PLATFORM) $(notdir $@)
 
 $(PRODUCT_OUT)/deploy-sd-for-emmc.img: $(GENSDIMG) $(DEPLOY_BOOTLOADER) $(PRODUCT_OUT)/boot.img
-	$(NATIVE_PATH) $< -C=$(PRODUCT_OUT) -T=DEPLOY-SD-FOR-EMMC -P=$(PRODUCT_BOARD_PLATFORM) $(notdir $@)
+	$< -C=$(PRODUCT_OUT) -T=DEPLOY-SD-FOR-EMMC -P=$(PRODUCT_BOARD_PLATFORM) $(notdir $@)
 
 $(PRODUCT_OUT)/deploy-gpt.img: $(PRODUCT_OUT)/deploy-sd.img $(GENSDIMG)
 	dd if=$< of=$@ bs=1k count=128
 
-$(PRODUCT_OUT)/sdcard.img: $(GENSDIMG)
+$(PRODUCT_OUT)/sdcard.img: $(GENSDIMG) $(DEPLOY_BOOTLOADER) $(PRODUCT_OUT)/boot.img
 	$(call pretty,"Creating sdcard image...")
-	$(NATIVE_PATH) $< -C=$(PRODUCT_OUT) -T=SD -P=$(PRODUCT_BOARD_PLATFORM) $@
+	$< -C=$(PRODUCT_OUT) -T=SD -P=$(PRODUCT_BOARD_PLATFORM) $(notdir $@)
 
 sdcard: droid $(PRODUCT_OUT)/sdcard.img
 

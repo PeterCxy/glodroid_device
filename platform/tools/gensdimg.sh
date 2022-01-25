@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+set -x
+
+ORIG=$PWD
+
 PLATFORM=sunxi
 
 # Old Allwinner boot ROM looks for the SPL binary starting from 16th LBA of SDCARD and EMMC.
@@ -13,6 +17,10 @@ ALIGN=$(( 2048 * 512 ))
 
 PTR=$PART_START
 pn=1
+
+sgdisk() {
+	$ORIG/out/soong/host/linux-x86/bin/sgdisk "$@"
+}
 
 add_part() {
 	SIZE=$(stat $1 -c%s)
@@ -28,7 +36,7 @@ add_part() {
 
 	sgdisk --set-alignment=1 $SGCMD --change-name=$pn:"$2" ${SDIMG}
 
-	dd if=$1 of=$SDIMG bs=4k count=$(( SIZE/4096 )) seek=$(( $PTR / 4096 )) conv=notrunc && sync
+	dd if=$1 of=$SDIMG bs=4k count=$(( SIZE/4096 )) seek=$(( $PTR / 4096 )) conv=notrunc
 
 	PTR=$(( ($PTR + $SIZE + $ALIGN - 1) / $ALIGN * $ALIGN ))
 	pn=$(( $pn+1 ))
