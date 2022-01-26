@@ -1,0 +1,32 @@
+cc_library_static {
+    name: "libvibratorpinephoneproimpl",
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V1-ndk_platform",
+    ],
+    export_include_dirs: ["include"],
+    srcs: ["Vibrator.cpp", "FFDevice.cpp"],
+    visibility: [
+        ":__subpackages__",
+        "//hardware/interfaces/tests/extension/vibrator:__subpackages__",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.vibrator-service.pinephonepro",
+    relative_install_path: "hw",
+    init_rc: ["vibrator-pinephonepro.rc"],
+    vintf_fragments: ["vibrator-pinephonepro.xml"],
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V1-ndk_platform",
+    ],
+    static_libs: [
+        "libvibratorpinephoneproimpl",
+    ],
+    srcs: ["main.cpp"],
+}
