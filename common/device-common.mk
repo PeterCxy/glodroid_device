@@ -157,9 +157,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #    ro.hardware.hwcomposer=drm \
 ##
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=160 \
-
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software \
@@ -191,12 +188,10 @@ PRODUCT_PACKAGES += \
     tv_input.default \
     com.android.media.tv.remoteprovider \
     InputDevices
-PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=260
 else
 
 # Use Launcher3QuickStep
 PRODUCT_PACKAGES += Launcher3QuickStep
-PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=160
 endif
 
 #External USB Camera HAL

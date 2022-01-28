@@ -152,7 +152,7 @@ int main(int argc, char **argv) {
       // Assume "no-ril" case.
       goto done;
     } else {
-      rilLibPath = "libpinephone-ril-2.so";
+      rilLibPath = "libpinephonepro-ril-2.so";
     }
 
     dlHandle = dlopen(rilLibPath, RTLD_NOW);

@@ -40,7 +40,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/modem.pinephonepro.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/modem.pinephonepro.rc \
 
 PRODUCT_COPY_FILES += \
-    device/glodroid/pinephonepro/audio.pinephone.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.pinephonepro.xml \
+    device/glodroid/pinephonepro/audio.pinephonepro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.pinephonepro.xml \
     device/glodroid/pinephonepro/camera_hal.yaml:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/camera_hal.yaml \
 
 # Lights HAL
