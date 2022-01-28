@@ -74,4 +74,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Checked by android.opengl.cts.OpenGlEsVersionTest#testOpenGlEsVersion. Required to run correct set of dEQP tests.
 # 131072 == 0x00020000 == GLES v2.0
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.opengles.version=131072
+    ro.opengles.version=131072 \
+    vendor.hwc.drm.use_overlay_planes=0
