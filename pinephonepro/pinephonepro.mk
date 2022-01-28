@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2020 Roman Stratiienko (r.stratiienko@gmail.com)
 
-$(call inherit-product, device/glodroid/pinephone/device.mk)
+$(call inherit-product, device/glodroid/pinephonepro/device.mk)
 
 PRODUCT_BOARD_PLATFORM := rockchip
 PRODUCT_NAME := pinephonepro
