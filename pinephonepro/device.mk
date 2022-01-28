@@ -31,9 +31,11 @@ PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=240
 # Firmware
 PRODUCT_COPY_FILES += \
     kernel/firmware/rockchip/dptx.bin:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/rockchip/dptx.bin \
-    device/glodroid/pinephonepro/fw_bcm43455c0_ag.bin:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/brcm/brcmfmac43455-sdio.bin \
     vendor/megous/firmware/regulatory.db:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/regulatory.db \
     vendor/megous/firmware/regulatory.db.p7s:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/regulatory.db.p7s \
+    vendor/megous/firmware/brcm/brcmfmac43455-sdio.bin:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/brcm/brcmfmac43455-sdio.bin \
+    vendor/megous/firmware/brcm/brcmfmac43455-sdio.txt:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/brcm/brcmfmac43455-sdio.txt \
+    vendor/megous/firmware/brcm/brcmfmac43455-sdio.clm_blob:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/brcm/brcmfmac43455-sdio.clm_blob \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors.pinephonepro.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/sensors.pinephonepro.rc \
