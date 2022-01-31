@@ -12,7 +12,7 @@ PRODUCT_MODEL := PinePhonePro
 PRODUCT_MANUFACTURER := Pine64
 PRODUCT_HAS_EMMC := true
 
-UBOOT_DEFCONFIG := orangepi-rk3399_defconfig
+UBOOT_DEFCONFIG := pinephone-pro-rk3399_defconfig
 ATF_PLAT        := rk3399
 
 DDR_BLOB := rk33/rk3399_ddr_933MHz_v1.25.bin
@@ -22,7 +22,7 @@ RK33_BIN := bin/rk33
 
 KERNEL_FRAGMENTS := $(LOCAL_PATH)/kernel.config
 
-KERNEL_SRC       := kernel/glodroid-megous
+KERNEL_SRC       := kernel/glodroid-mainline
 KERNEL_DEFCONFIG := $(KERNEL_SRC)/arch/arm64/configs/pinephone_pro_defconfig
 
 KERNEL_DTB_FILE := rockchip/rk3399-pinephone-pro.dtb
