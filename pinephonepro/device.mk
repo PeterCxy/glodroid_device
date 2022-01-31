@@ -36,6 +36,7 @@ PRODUCT_COPY_FILES += \
     vendor/megous/firmware/brcm/brcmfmac43455-sdio.bin:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/brcm/brcmfmac43455-sdio.bin \
     vendor/megous/firmware/brcm/brcmfmac43455-sdio.txt:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/brcm/brcmfmac43455-sdio.txt \
     vendor/megous/firmware/brcm/brcmfmac43455-sdio.clm_blob:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/brcm/brcmfmac43455-sdio.clm_blob \
+    vendor/megous/firmware/brcm/BCM4345C0.hcd:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/brcm/BCM4345C0.hcd \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors.pinephonepro.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/sensors.pinephonepro.rc \
