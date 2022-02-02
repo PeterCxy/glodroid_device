@@ -145,6 +145,16 @@ FUNC_BEGIN(bootcmd_block)
   setenv androidrecovery true ;
  fi;
 #endif
+#ifdef device_pinephonepro
+ if button STRESC(Volume Up);
+ then
+   run enter_fastboot ;
+ fi;
+ if button STRESC(Volume Down);
+ then
+  setenv androidrecovery true ;
+ fi;
+#endif
  run bootcmd_bcb &&
  if test STRESC(${androidrecovery}) != STRESC(true);
  then
