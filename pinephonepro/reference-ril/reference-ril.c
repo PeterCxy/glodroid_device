@@ -5603,7 +5603,7 @@ static void probeForModemMode(ModemInfo *info)
     if (!err) at_response_free(response);
     // TODO: find out if modem really supports WCDMA/LTE
     info->supportedTechs = MDM_GSM | MDM_WCDMA | MDM_LTE;
-    info->currentTech = MDM_GSM;
+    info->currentTech = MDM_LTE;
     RLOGI("Found GSM Modem");
 }
 
